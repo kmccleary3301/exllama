@@ -2,6 +2,11 @@
 This is a fork of jllllll's python package version of exllama.
 This fork adds simplified llm support for langchain.
 
+I copied the implementation from [CoffeeVampir3's langchain example](https://github.com/CoffeeVampir3/exllama-langchain-example/blob/master/langchain_ex.py), although some changes needed to be made because of errors with pydantic.
+Specifically, they have deprecated root_validation, and updating it causes errors.
+Langchain has included pydantic_v1 in there package to avoid this issue, so my modification
+is simply substituting the pydantic import with langchain's version.
+
 The remainder of the readme is unchanged from jllllll's repository,
 except for the installation commands.
 
@@ -11,11 +16,11 @@ The pupose of this is to allow for one-time building of the CUDA kernels.
 To build the module, install the CUDA Toolkit or ROCm SDK along with the appropriate Pytorch version that you intend to use.
 Full list of requirements are listed below. After this, you can install the module with:
 ```
-python -m pip install git+https://github.com/jllllll/exllama
+python -m pip install git+https://github.com/kmccleary3301/exllama
 ```
 Or you can build a wheel with:
 ```
-python -m pip wheel git+https://github.com/jllllll/exllama --no-deps
+python -m pip wheel git+https://github.com/kmccleary3301/exllama --no-deps
 ```
 The CUDA version used to build the wheel will be appended to the version number automatically.  
 ROCm version can be appended by defining the `ROCM_VERSION` environment variable: `ROCM_VERSION=5.4.2`

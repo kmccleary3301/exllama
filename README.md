@@ -1,3 +1,10 @@
+### Notes from author of this fork
+This is a fork of jllllll's python package version of exllama.
+This fork adds simplified llm support for langchain.
+
+The remainder of the readme is unchanged from jllllll's repository,
+except for the installation commands.
+
 ### This is a python module version of ExLlama
 The pupose of this is to allow for one-time building of the CUDA kernels.
 
